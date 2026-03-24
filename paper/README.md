@@ -32,6 +32,7 @@ Expected runtime: ~5-10 minutes (most time in Claim 4 Monte Carlo and Global MC)
 | 5. Threshold uniqueness | `claim5_threshold_tau.py` | 2/73 thresholds produce unity≈1 |
 | 6. Bootstrap CIs | `claim6_bootstrap_ci.py` | Orbital 2.680 [2.02, 3.10], etc. |
 | **Joint significance** | **`global_pipeline_mc.py`** | **p<0.0001 (0/10,000 joint passes)** |
+| Functional-form LEE | `functional_form_mc.py` | 342 monomial products tested, look-elsewhere corrected |
 | Threshold independence | `threshold_independence.py` | R² and LOOCV peak near τ=3/2 |
 
 ### Paper B — Detection Signatures
@@ -61,6 +62,14 @@ For each of 10,000 synthetic Wagstaff-Poisson sequences, the script applies the
 full analysis pipeline with post-hoc threshold optimization — exactly the procedure
 a referee would worry about. Zero synthetic sequences jointly beat the real data on
 all four metrics (R², ΔAIC, |unity-1|, |Spearman r|), yielding p < 0.0001.
+
+### Functional-Form Look-Elsewhere Effect (Paper A, Section 8)
+
+Addresses the referee critique: "how many functional forms were tried before landing
+on d^a × v^b × b^c ≈ 1?" This script tests all 342 monomial products with integer
+exponents in [-3, 3] against 1,000 synthetic Wagstaff sequences to compute a
+look-elsewhere-corrected p-value. If the unity equation is a statistical fluke,
+many forms should achieve similar proximity to unity on random data.
 
 ### Threshold Independence (Paper A, Section 3.3)
 
