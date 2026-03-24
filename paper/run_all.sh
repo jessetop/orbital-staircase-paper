@@ -2,7 +2,7 @@
 # Run all paper claim verification scripts.
 # Usage: cd paper && bash run_all.sh
 #
-# Expected runtime: ~3-5 minutes (dominated by claim4 Monte Carlo)
+# Expected runtime: ~5-10 minutes (dominated by claim4 Monte Carlo and global MC)
 # Requirements: Python 3.11+, numpy, scipy
 
 set -e
@@ -42,6 +42,8 @@ run_claim "Claim 3: Lighthouse Detection" "paper/claim3_lighthouse.py"
 run_claim "Claim 4: Unity Equation (Monte Carlo)" "paper/claim4_unity_equation.py"
 run_claim "Claim 5: Threshold τ = 3/2 Uniqueness" "paper/claim5_threshold_tau.py"
 run_claim "Claim 6: Bootstrap Confidence Intervals" "paper/claim6_bootstrap_ci.py"
+run_claim "Global Pipeline MC (Joint Significance)" "paper/global_pipeline_mc.py"
+run_claim "Threshold Independence (R², LOOCV, MDL)" "paper/threshold_independence.py"
 
 echo ""
 echo "================================================================"
